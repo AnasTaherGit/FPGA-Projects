@@ -1,0 +1,607 @@
+TimeQuest Timing Analyzer report for LCD1602
+Sat Dec 05 12:31:56 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Setup Transfers
+ 19. Hold Transfers
+ 20. Report TCCS
+ 21. Report RSKM
+ 22. Unconstrained Paths
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; LCD1602                                                            ;
+; Device Family      ; Cyclone                                                            ;
+; Device Name        ; EP1C3T144C8                                                        ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Slow Model                                                         ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 87.77 MHz ; 87.77 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -10.393 ; -493.222      ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.031 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.583 ; -143.927      ;
++-------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                        ;
++---------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -10.393 ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.028      ; 11.384     ;
+; -10.341 ; lcd_controller:LCD|clk_count[12] ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.304     ;
+; -10.335 ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.298     ;
+; -10.308 ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.271     ;
+; -10.278 ; lcd_controller:LCD|clk_count[15] ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.028      ; 11.269     ;
+; -10.238 ; lcd_controller:LCD|clk_count[7]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.201     ;
+; -10.231 ; lcd_controller:LCD|clk_count[11] ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.194     ;
+; -10.213 ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.176     ;
+; -10.195 ; lcd_controller:LCD|clk_count[14] ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.158     ;
+; -10.186 ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[16] ; clk          ; clk         ; 1.000        ; -0.028     ; 11.121     ;
+; -10.185 ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[20] ; clk          ; clk         ; 1.000        ; -0.028     ; 11.120     ;
+; -10.183 ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[19] ; clk          ; clk         ; 1.000        ; -0.028     ; 11.118     ;
+; -10.178 ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[15] ; clk          ; clk         ; 1.000        ; -0.028     ; 11.113     ;
+; -10.153 ; lcd_controller:LCD|clk_count[6]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.116     ;
+; -10.139 ; lcd_controller:LCD|clk_count[5]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.102     ;
+; -10.138 ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 11.101     ;
+; -10.136 ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.099     ;
+; -10.089 ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[16] ; clk          ; clk         ; 1.000        ; -0.028     ; 11.024     ;
+; -10.088 ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[20] ; clk          ; clk         ; 1.000        ; -0.028     ; 11.023     ;
+; -10.086 ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[19] ; clk          ; clk         ; 1.000        ; -0.028     ; 11.021     ;
+; -10.084 ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.047     ;
+; -10.081 ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[15] ; clk          ; clk         ; 1.000        ; -0.028     ; 11.016     ;
+; -10.064 ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|clk_count[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.027     ;
+; -10.063 ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|clk_count[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.026     ;
+; -10.061 ; lcd_controller:LCD|clk_count[4]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.024     ;
+; -10.061 ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|clk_count[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.024     ;
+; -10.059 ; lcd_controller:LCD|clk_count[2]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 11.022     ;
+; -10.056 ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|clk_count[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.019     ;
+; -10.041 ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 11.004     ;
+; -10.039 ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.002     ;
+; -10.016 ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|clk_count[7]  ; clk          ; clk         ; 1.000        ; 0.028      ; 11.007     ;
+; -10.014 ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|clk_count[13] ; clk          ; clk         ; 1.000        ; 0.028      ; 11.005     ;
+; -10.006 ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|clk_count[16] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.941     ;
+; -10.005 ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|clk_count[20] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.940     ;
+; -10.003 ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|e             ; clk          ; clk         ; 1.000        ; 0.028      ; 10.994     ;
+; -10.003 ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|clk_count[19] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.938     ;
+; -10.000 ; lcd_controller:LCD|clk_count[0]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 10.963     ;
+; -9.998  ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|clk_count[15] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.933     ;
+; -9.992  ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|lcd_data[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 10.955     ;
+; -9.989  ; lcd_controller:LCD|clk_count[8]  ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 10.952     ;
+; -9.987  ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.950     ;
+; -9.982  ; lcd_controller:LCD|clk_count[0]  ; lcd_controller:LCD|clk_count[16] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.917     ;
+; -9.981  ; lcd_controller:LCD|clk_count[0]  ; lcd_controller:LCD|clk_count[20] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.916     ;
+; -9.979  ; lcd_controller:LCD|clk_count[0]  ; lcd_controller:LCD|clk_count[19] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.914     ;
+; -9.978  ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[21] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.913     ;
+; -9.977  ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[18] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.912     ;
+; -9.976  ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[25] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.911     ;
+; -9.974  ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[24] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.909     ;
+; -9.974  ; lcd_controller:LCD|clk_count[0]  ; lcd_controller:LCD|clk_count[15] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.909     ;
+; -9.972  ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[17] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.907     ;
+; -9.964  ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[22] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.899     ;
+; -9.963  ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|clk_count[23] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.898     ;
+; -9.962  ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|clk_count[14] ; clk          ; clk         ; 1.000        ; 0.028      ; 10.953     ;
+; -9.958  ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|clk_count[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 10.921     ;
+; -9.956  ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|clk_count[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.919     ;
+; -9.951  ; lcd_controller:LCD|clk_count[12] ; lcd_controller:LCD|e             ; clk          ; clk         ; 1.000        ; 0.000      ; 10.914     ;
+; -9.945  ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|e             ; clk          ; clk         ; 1.000        ; 0.000      ; 10.908     ;
+; -9.940  ; lcd_controller:LCD|clk_count[12] ; lcd_controller:LCD|lcd_data[1]   ; clk          ; clk         ; 1.000        ; -0.028     ; 10.875     ;
+; -9.937  ; lcd_controller:LCD|clk_count[4]  ; lcd_controller:LCD|clk_count[16] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.872     ;
+; -9.937  ; lcd_controller:LCD|clk_count[2]  ; lcd_controller:LCD|clk_count[16] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.872     ;
+; -9.936  ; lcd_controller:LCD|clk_count[4]  ; lcd_controller:LCD|clk_count[20] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.871     ;
+; -9.936  ; lcd_controller:LCD|clk_count[2]  ; lcd_controller:LCD|clk_count[20] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.871     ;
+; -9.934  ; lcd_controller:LCD|clk_count[4]  ; lcd_controller:LCD|clk_count[19] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.869     ;
+; -9.934  ; lcd_controller:LCD|clk_count[2]  ; lcd_controller:LCD|clk_count[19] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.869     ;
+; -9.934  ; lcd_controller:LCD|clk_count[0]  ; lcd_controller:LCD|clk_count[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 10.897     ;
+; -9.934  ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|lcd_data[1]   ; clk          ; clk         ; 1.000        ; -0.028     ; 10.869     ;
+; -9.932  ; lcd_controller:LCD|clk_count[0]  ; lcd_controller:LCD|clk_count[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.895     ;
+; -9.929  ; lcd_controller:LCD|clk_count[4]  ; lcd_controller:LCD|clk_count[15] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.864     ;
+; -9.929  ; lcd_controller:LCD|clk_count[2]  ; lcd_controller:LCD|clk_count[15] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.864     ;
+; -9.928  ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|lcd_data[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 10.891     ;
+; -9.918  ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|e             ; clk          ; clk         ; 1.000        ; 0.000      ; 10.881     ;
+; -9.911  ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|lcd_data[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 10.874     ;
+; -9.911  ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|lcd_data[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 10.874     ;
+; -9.911  ; lcd_controller:LCD|clk_count[10] ; lcd_controller:LCD|lcd_data[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 10.874     ;
+; -9.909  ; lcd_controller:LCD|clk_count[7]  ; lcd_controller:LCD|clk_count[16] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.844     ;
+; -9.908  ; lcd_controller:LCD|clk_count[7]  ; lcd_controller:LCD|clk_count[20] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.843     ;
+; -9.907  ; lcd_controller:LCD|clk_count[1]  ; lcd_controller:LCD|lcd_data[1]   ; clk          ; clk         ; 1.000        ; -0.028     ; 10.842     ;
+; -9.906  ; lcd_controller:LCD|clk_count[7]  ; lcd_controller:LCD|clk_count[19] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.841     ;
+; -9.904  ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|clk_count[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.867     ;
+; -9.901  ; lcd_controller:LCD|clk_count[7]  ; lcd_controller:LCD|clk_count[15] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.836     ;
+; -9.889  ; lcd_controller:LCD|clk_count[4]  ; lcd_controller:LCD|clk_count[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 10.852     ;
+; -9.889  ; lcd_controller:LCD|clk_count[2]  ; lcd_controller:LCD|clk_count[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 10.852     ;
+; -9.888  ; lcd_controller:LCD|clk_count[15] ; lcd_controller:LCD|e             ; clk          ; clk         ; 1.000        ; 0.028      ; 10.879     ;
+; -9.887  ; lcd_controller:LCD|clk_count[4]  ; lcd_controller:LCD|clk_count[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.850     ;
+; -9.887  ; lcd_controller:LCD|clk_count[2]  ; lcd_controller:LCD|clk_count[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.850     ;
+; -9.885  ; lcd_controller:LCD|clk_count[13] ; lcd_controller:LCD|lcd_data[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 10.848     ;
+; -9.881  ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[21] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.816     ;
+; -9.880  ; lcd_controller:LCD|clk_count[0]  ; lcd_controller:LCD|clk_count[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.843     ;
+; -9.880  ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[18] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.815     ;
+; -9.879  ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[25] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.814     ;
+; -9.877  ; lcd_controller:LCD|clk_count[15] ; lcd_controller:LCD|lcd_data[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 10.840     ;
+; -9.877  ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[24] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.812     ;
+; -9.876  ; lcd_controller:LCD|clk_count[12] ; lcd_controller:LCD|lcd_data[3]   ; clk          ; clk         ; 1.000        ; -0.028     ; 10.811     ;
+; -9.875  ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[17] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.810     ;
+; -9.870  ; lcd_controller:LCD|clk_count[9]  ; lcd_controller:LCD|lcd_data[3]   ; clk          ; clk         ; 1.000        ; -0.028     ; 10.805     ;
+; -9.869  ; lcd_controller:LCD|clk_count[12] ; lcd_controller:LCD|clk_count[16] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.804     ;
+; -9.868  ; lcd_controller:LCD|clk_count[12] ; lcd_controller:LCD|clk_count[20] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.803     ;
+; -9.867  ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[22] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.802     ;
+; -9.866  ; lcd_controller:LCD|clk_count[12] ; lcd_controller:LCD|clk_count[19] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.801     ;
+; -9.866  ; lcd_controller:LCD|clk_count[3]  ; lcd_controller:LCD|clk_count[23] ; clk          ; clk         ; 1.000        ; -0.028     ; 10.801     ;
++---------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                             ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.031 ; lcd_controller:LCD|ptr[4]           ; lcd_controller:LCD|ptr[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.046      ;
+; 1.084 ; lcd_controller:LCD|state.power_up   ; lcd_controller:LCD|state.power_up   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.099      ;
+; 1.232 ; lcd_controller:LCD|lcd_data[7]      ; lcd_controller:LCD|lcd_data[7]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.247      ;
+; 1.234 ; lcd_controller:LCD|ptr[0]           ; lcd_controller:LCD|ptr[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.249      ;
+; 1.243 ; lcd_controller:LCD|rs               ; lcd_controller:LCD|rs               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 1.258 ; lcd_controller:LCD|clk_count[31]    ; lcd_controller:LCD|state.power_up   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.273      ;
+; 1.270 ; lcd_controller:LCD|state.initialize ; lcd_controller:LCD|state.initialize ; clk          ; clk         ; 0.000        ; 0.000      ; 1.285      ;
+; 1.271 ; lcd_controller:LCD|state.initialize ; lcd_controller:LCD|clk_count[31]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.286      ;
+; 1.275 ; lcd_controller:LCD|state.initialize ; lcd_controller:LCD|state.RESETLINE  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.290      ;
+; 1.339 ; lcd_controller:LCD|line             ; lcd_controller:LCD|line             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.354      ;
+; 1.340 ; lcd_controller:LCD|line             ; lcd_controller:LCD|state.line1      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.355      ;
+; 1.343 ; lcd_controller:LCD|line             ; lcd_controller:LCD|state.line2      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.358      ;
+; 1.469 ; lcd_controller:LCD|lcd_data[6]      ; lcd_controller:LCD|lcd_data[6]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.484      ;
+; 1.470 ; lcd_controller:LCD|state.line1      ; lcd_controller:LCD|line             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.485      ;
+; 1.492 ; lcd_controller:LCD|lcd_data[3]      ; lcd_controller:LCD|lcd_data[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.507      ;
+; 1.855 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|ptr[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.870      ;
+; 1.867 ; lcd_controller:LCD|state.line1      ; lcd_controller:LCD|state.send       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
+; 1.891 ; lcd_controller:LCD|ptr[1]           ; lcd_controller:LCD|ptr[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.906      ;
+; 1.914 ; lcd_controller:LCD|ptr[3]           ; lcd_controller:LCD|ptr[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.929      ;
+; 1.932 ; lcd_controller:LCD|state.power_up   ; lcd_controller:LCD|state.initialize ; clk          ; clk         ; 0.000        ; 0.000      ; 1.947      ;
+; 2.074 ; lcd_controller:LCD|clk_count[0]     ; lcd_controller:LCD|clk_count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.089      ;
+; 2.101 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|state.send       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.116      ;
+; 2.104 ; lcd_controller:LCD|clk_count[31]    ; lcd_controller:LCD|state.initialize ; clk          ; clk         ; 0.000        ; 0.000      ; 2.119      ;
+; 2.214 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|ptr[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.229      ;
+; 2.222 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|ptr[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.237      ;
+; 2.279 ; lcd_controller:LCD|ptr[2]           ; lcd_controller:LCD|ptr[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.294      ;
+; 2.293 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|ptr[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
+; 2.293 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|ptr[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
+; 2.327 ; lcd_controller:LCD|clk_count[2]     ; lcd_controller:LCD|clk_count[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.342      ;
+; 2.462 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[10]    ; clk          ; clk         ; 0.000        ; -0.042     ; 2.435      ;
+; 2.516 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|lcd_data[5]      ; clk          ; clk         ; 0.000        ; -0.042     ; 2.489      ;
+; 2.558 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[29]    ; clk          ; clk         ; 0.000        ; -0.042     ; 2.531      ;
+; 2.559 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[26]    ; clk          ; clk         ; 0.000        ; -0.042     ; 2.532      ;
+; 2.570 ; lcd_controller:LCD|ptr[1]           ; lcd_controller:LCD|ptr[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.585      ;
+; 2.609 ; lcd_controller:LCD|clk_count[16]    ; lcd_controller:LCD|clk_count[16]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.624      ;
+; 2.645 ; lcd_controller:LCD|state.line1      ; lcd_controller:LCD|lcd_data[5]      ; clk          ; clk         ; 0.000        ; -0.042     ; 2.618      ;
+; 2.658 ; lcd_controller:LCD|state.line1      ; lcd_controller:LCD|lcd_data[4]      ; clk          ; clk         ; 0.000        ; -0.042     ; 2.631      ;
+; 2.665 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|line             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.680      ;
+; 2.665 ; lcd_controller:LCD|ptr[2]           ; lcd_controller:LCD|ptr[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.680      ;
+; 2.676 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[14]    ; clk          ; clk         ; 0.000        ; -0.014     ; 2.677      ;
+; 2.684 ; lcd_controller:LCD|ptr[1]           ; lcd_controller:LCD|ptr[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.699      ;
+; 2.686 ; lcd_controller:LCD|clk_count[25]    ; lcd_controller:LCD|clk_count[25]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.701      ;
+; 2.726 ; lcd_controller:LCD|state.line2      ; lcd_controller:LCD|lcd_data[5]      ; clk          ; clk         ; 0.000        ; -0.042     ; 2.699      ;
+; 2.735 ; lcd_controller:LCD|state.line2      ; lcd_controller:LCD|lcd_data[4]      ; clk          ; clk         ; 0.000        ; -0.042     ; 2.708      ;
+; 2.749 ; lcd_controller:LCD|clk_count[13]    ; lcd_controller:LCD|clk_count[13]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.764      ;
+; 2.752 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|lcd_data[4]      ; clk          ; clk         ; 0.000        ; -0.042     ; 2.725      ;
+; 2.776 ; lcd_controller:LCD|clk_count[1]     ; lcd_controller:LCD|clk_count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.791      ;
+; 2.787 ; lcd_controller:LCD|clk_count[4]     ; lcd_controller:LCD|clk_count[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.802      ;
+; 2.803 ; lcd_controller:LCD|state.power_up   ; lcd_controller:LCD|clk_count[29]    ; clk          ; clk         ; 0.000        ; -0.042     ; 2.776      ;
+; 2.808 ; lcd_controller:LCD|state.line2      ; lcd_controller:LCD|state.send       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.823      ;
+; 2.855 ; lcd_controller:LCD|clk_count[17]    ; lcd_controller:LCD|clk_count[17]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.870      ;
+; 2.863 ; lcd_controller:LCD|e                ; lcd_controller:LCD|e                ; clk          ; clk         ; 0.000        ; 0.000      ; 2.878      ;
+; 2.886 ; lcd_controller:LCD|clk_count[22]    ; lcd_controller:LCD|clk_count[22]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.901      ;
+; 2.906 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|e                ; clk          ; clk         ; 0.000        ; -0.014     ; 2.907      ;
+; 2.918 ; lcd_controller:LCD|clk_count[23]    ; lcd_controller:LCD|clk_count[23]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.933      ;
+; 2.943 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|state.line1      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.958      ;
+; 2.943 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|state.line2      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.958      ;
+; 2.975 ; lcd_controller:LCD|clk_count[24]    ; lcd_controller:LCD|clk_count[24]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.990      ;
+; 2.982 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[7]     ; clk          ; clk         ; 0.000        ; -0.014     ; 2.983      ;
+; 2.988 ; lcd_controller:LCD|clk_count[18]    ; lcd_controller:LCD|clk_count[18]    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.003      ;
+; 3.007 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[15]    ; clk          ; clk         ; 0.000        ; -0.042     ; 2.980      ;
+; 3.010 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[19]    ; clk          ; clk         ; 0.000        ; -0.042     ; 2.983      ;
+; 3.011 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[20]    ; clk          ; clk         ; 0.000        ; -0.042     ; 2.984      ;
+; 3.021 ; lcd_controller:LCD|clk_count[3]     ; lcd_controller:LCD|clk_count[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.036      ;
+; 3.024 ; lcd_controller:LCD|clk_count[31]    ; lcd_controller:LCD|line             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.039      ;
+; 3.035 ; lcd_controller:LCD|clk_count[31]    ; lcd_controller:LCD|state.line1      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.050      ;
+; 3.035 ; lcd_controller:LCD|clk_count[31]    ; lcd_controller:LCD|state.line2      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.050      ;
+; 3.042 ; lcd_controller:LCD|clk_count[21]    ; lcd_controller:LCD|clk_count[21]    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.057      ;
+; 3.050 ; lcd_controller:LCD|state.power_up   ; lcd_controller:LCD|clk_count[10]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.023      ;
+; 3.050 ; lcd_controller:LCD|state.power_up   ; lcd_controller:LCD|clk_count[26]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.023      ;
+; 3.079 ; lcd_controller:LCD|clk_count[1]     ; lcd_controller:LCD|clk_count[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.094      ;
+; 3.087 ; lcd_controller:LCD|ptr[1]           ; lcd_controller:LCD|state.line1      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.102      ;
+; 3.089 ; lcd_controller:LCD|clk_count[5]     ; lcd_controller:LCD|clk_count[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.104      ;
+; 3.089 ; lcd_controller:LCD|clk_count[0]     ; lcd_controller:LCD|clk_count[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.104      ;
+; 3.091 ; lcd_controller:LCD|ptr[1]           ; lcd_controller:LCD|state.line2      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.106      ;
+; 3.097 ; lcd_controller:LCD|clk_count[7]     ; lcd_controller:LCD|clk_count[7]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.112      ;
+; 3.105 ; lcd_controller:LCD|ptr[1]           ; lcd_controller:LCD|line             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.120      ;
+; 3.121 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[18]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.094      ;
+; 3.127 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[24]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.100      ;
+; 3.130 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[17]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.103      ;
+; 3.134 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[23]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.107      ;
+; 3.136 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[22]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.109      ;
+; 3.169 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[13]    ; clk          ; clk         ; 0.000        ; -0.014     ; 3.170      ;
+; 3.176 ; lcd_controller:LCD|clk_count[6]     ; lcd_controller:LCD|clk_count[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.191      ;
+; 3.195 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[6]     ; clk          ; clk         ; 0.000        ; -0.014     ; 3.196      ;
+; 3.214 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|ptr[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.229      ;
+; 3.217 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|rs               ; clk          ; clk         ; 0.000        ; 0.000      ; 3.232      ;
+; 3.218 ; lcd_controller:LCD|clk_count[26]    ; lcd_controller:LCD|clk_count[26]    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.233      ;
+; 3.244 ; lcd_controller:LCD|clk_count[8]     ; lcd_controller:LCD|clk_count[8]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.259      ;
+; 3.249 ; lcd_controller:LCD|clk_count[20]    ; lcd_controller:LCD|clk_count[20]    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.264      ;
+; 3.272 ; lcd_controller:LCD|state.send       ; lcd_controller:LCD|clk_count[29]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.245      ;
+; 3.277 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[16]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.250      ;
+; 3.285 ; lcd_controller:LCD|clk_count[2]     ; lcd_controller:LCD|clk_count[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.300      ;
+; 3.330 ; lcd_controller:LCD|clk_count[19]    ; lcd_controller:LCD|clk_count[19]    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.345      ;
+; 3.339 ; lcd_controller:LCD|clk_count[23]    ; lcd_controller:LCD|clk_count[25]    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.354      ;
+; 3.364 ; lcd_controller:LCD|clk_count[0]     ; lcd_controller:LCD|clk_count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.379      ;
+; 3.369 ; lcd_controller:LCD|state.power_up   ; lcd_controller:LCD|line             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.384      ;
+; 3.374 ; lcd_controller:LCD|clk_count[2]     ; lcd_controller:LCD|clk_count[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.389      ;
+; 3.384 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[25]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.357      ;
+; 3.384 ; lcd_controller:LCD|state.RESETLINE  ; lcd_controller:LCD|clk_count[21]    ; clk          ; clk         ; 0.000        ; -0.042     ; 3.357      ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                                           ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------+
+; -1.583 ; 1.000        ; 2.583          ; Port Rate        ; clk   ; Rise       ; clk                                 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[0]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[0]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[10]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[10]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[11]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[11]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[12]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[12]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[13]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[13]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[14]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[14]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[15]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[15]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[16]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[16]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[17]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[17]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[18]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[18]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[19]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[19]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[1]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[1]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[20]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[20]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[21]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[21]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[22]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[22]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[23]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[23]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[24]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[24]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[25]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[25]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[26]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[26]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[27]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[27]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[28]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[28]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[29]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[29]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[2]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[2]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[30]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[30]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[31]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[31]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[3]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[3]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[4]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[4]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[5]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[5]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[6]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[6]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[7]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[7]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[8]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[8]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|clk_count[9]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|clk_count[9]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|e                ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|e                ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[0]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[0]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[1]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[1]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[2]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[2]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[3]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[3]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[4]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[4]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[5]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[5]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[6]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[6]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[7]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|lcd_data[7]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|line             ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|line             ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|ptr[0]           ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|ptr[0]           ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|ptr[1]           ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|ptr[1]           ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|ptr[2]           ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|ptr[2]           ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|ptr[3]           ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|ptr[3]           ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|ptr[4]           ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|ptr[4]           ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|rs               ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|rs               ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|state.RESETLINE  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; lcd_controller:LCD|state.RESETLINE  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; lcd_controller:LCD|state.initialize ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk        ; 7.126 ; 7.126 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clk        ; -5.648 ; -5.648 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; lcd_db[*]  ; clk        ; 8.424 ; 8.424 ; Rise       ; clk             ;
+;  lcd_db[0] ; clk        ; 8.101 ; 8.101 ; Rise       ; clk             ;
+;  lcd_db[1] ; clk        ; 8.106 ; 8.106 ; Rise       ; clk             ;
+;  lcd_db[2] ; clk        ; 8.424 ; 8.424 ; Rise       ; clk             ;
+;  lcd_db[3] ; clk        ; 8.392 ; 8.392 ; Rise       ; clk             ;
+;  lcd_db[4] ; clk        ; 8.343 ; 8.343 ; Rise       ; clk             ;
+;  lcd_db[5] ; clk        ; 8.098 ; 8.098 ; Rise       ; clk             ;
+;  lcd_db[6] ; clk        ; 8.028 ; 8.028 ; Rise       ; clk             ;
+;  lcd_db[7] ; clk        ; 8.306 ; 8.306 ; Rise       ; clk             ;
+; lcd_e      ; clk        ; 8.121 ; 8.121 ; Rise       ; clk             ;
+; lcd_rs     ; clk        ; 7.661 ; 7.661 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; lcd_db[*]  ; clk        ; 8.028 ; 8.028 ; Rise       ; clk             ;
+;  lcd_db[0] ; clk        ; 8.101 ; 8.101 ; Rise       ; clk             ;
+;  lcd_db[1] ; clk        ; 8.106 ; 8.106 ; Rise       ; clk             ;
+;  lcd_db[2] ; clk        ; 8.424 ; 8.424 ; Rise       ; clk             ;
+;  lcd_db[3] ; clk        ; 8.392 ; 8.392 ; Rise       ; clk             ;
+;  lcd_db[4] ; clk        ; 8.343 ; 8.343 ; Rise       ; clk             ;
+;  lcd_db[5] ; clk        ; 8.098 ; 8.098 ; Rise       ; clk             ;
+;  lcd_db[6] ; clk        ; 8.028 ; 8.028 ; Rise       ; clk             ;
+;  lcd_db[7] ; clk        ; 8.306 ; 8.306 ; Rise       ; clk             ;
+; lcd_e      ; clk        ; 8.121 ; 8.121 ; Rise       ; clk             ;
+; lcd_rs     ; clk        ; 7.661 ; 7.661 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 126708   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 126708   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 6     ; 6    ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 10    ; 10   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Sat Dec 05 12:31:55 2020
+Info: Command: quartus_sta LCD1602 -c LCD1602
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'LCD1602.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -10.393
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -10.393      -493.222 clk 
+Info (332146): Worst-case hold slack is 1.031
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.031         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.583
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.583      -143.927 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4540 megabytes
+    Info: Processing ended: Sat Dec 05 12:31:56 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+

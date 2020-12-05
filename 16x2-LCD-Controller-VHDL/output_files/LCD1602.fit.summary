@@ -1,0 +1,12 @@
+Fitter Status : Successful - Sat Dec 05 12:31:51 2020
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : LCD1602
+Top-level Entity Name : ControllerTest_TOP
+Family : Cyclone
+Device : EP1C3T144C8
+Timing Models : Final
+Total logic elements : 232 / 2,910 ( 8 % )
+Total pins : 13 / 104 ( 13 % )
+Total virtual pins : 0
+Total memory bits : 0 / 59,904 ( 0 % )
+Total PLLs : 0 / 1 ( 0 % )

@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Modeltech_pe_edu_10.4a/examples
+Econtrollertest_top
+Z0 w1607167901
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/cawoo/My Folders/Electronique/FPGA Project/16x2-LCD-Controller-VHDL/sim
+Z4 8C:/Users/cawoo/My Folders/Electronique/FPGA Project/16x2-LCD-Controller-VHDL/ControllerTest_TOP.vhd
+Z5 FC:/Users/cawoo/My Folders/Electronique/FPGA Project/16x2-LCD-Controller-VHDL/ControllerTest_TOP.vhd
+l0
+L32
+VcM3]Io@LQQ:44>z^Cm7480
+!s100 e2J=2AEQ`G7B75=o`JaRF2
+Z6 OP;C;10.4a;61
+32
+Z7 !s110 1607173192
+!i10b 1
+Z8 !s108 1607173192.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/cawoo/My Folders/Electronique/FPGA Project/16x2-LCD-Controller-VHDL/ControllerTest_TOP.vhd|
+Z10 !s107 C:/Users/cawoo/My Folders/Electronique/FPGA Project/16x2-LCD-Controller-VHDL/ControllerTest_TOP.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+Abehavioral
+R1
+R2
+DEx4 work 18 controllertest_top 0 22 cM3]Io@LQQ:44>z^Cm7480
+l61
+L43
+VH3Si^l^C2Z1Ydn=ZQD26c0
+!s100 3VUa1C7X501a1FS<DkKQO2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Elcd_controller
+Z13 w1607118904
+R1
+R2
+R3
+Z14 8C:/Users/cawoo/My Folders/Electronique/FPGA Project/16x2-LCD-Controller-VHDL/lcd_controller.vhd
+Z15 FC:/Users/cawoo/My Folders/Electronique/FPGA Project/16x2-LCD-Controller-VHDL/lcd_controller.vhd
+l0
+L45
+V@oa?1HVH[eF5USPK9Qkng1
+!s100 ]6Wo`eXNTBRTnzc0of<WR1
+R6
+32
+R7
+!i10b 1
+Z16 !s108 1607173190.000000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/cawoo/My Folders/Electronique/FPGA Project/16x2-LCD-Controller-VHDL/lcd_controller.vhd|
+Z18 !s107 C:/Users/cawoo/My Folders/Electronique/FPGA Project/16x2-LCD-Controller-VHDL/lcd_controller.vhd|
+!i113 1
+R11
+R12
+Acontroller
+R1
+R2
+DEx4 work 14 lcd_controller 0 22 @oa?1HVH[eF5USPK9Qkng1
+l61
+L55
+Vh@6A=CWPjo`@3H]KjFUH31
+!s100 kNhPISA>UF??keaA=SkZb1
+R6
+32
+R7
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R11
+R12
